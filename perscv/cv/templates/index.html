@@ -1,0 +1,224 @@
+{% load static %}
+{% load tz %}
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/2ee9e58eb3.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>CVJS</title>
+</head>
+<style>
+    .main {
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 5%;
+        padding-top: 5px;
+        width: 50%;
+        height: 500px;
+        background-color: white;
+        align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 10px 0 rgba(0, 0, 0, 0.50);
+        border-radius: 10px;
+    }
+    .inner {
+        width: 92%;
+        margin-left: 4%;
+        margin-top: 18px;
+        height: 90%;
+        padding-top: 5px;
+        background-color: white;
+        text-align: center;
+        box-shadow:inset 1px 1px 4px 0px #000000;
+        border-radius: 10px;
+        background: url('{% static "images/inner-wallpaper.jpg" %}') no-repeat center center
+    }
+
+    /* The sidebar menu */
+    .sidebar {
+      height: 45%; /* 45% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: fixed; /* Stay in place */
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      top: 15%;
+      left: 74.8%;
+      float: right;
+      background-color: gray;
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    }
+
+    .openbtn {
+        float: right;
+        background-color: white;
+        position: relative;
+        top: -250px;
+        right: 0px;
+        width: 30px;
+        height: 50px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: 0px;
+        z-index: 1000;
+        font-size: 50px;
+        transition: 0.5s; /* 0.4 second transition effect to slide in the sidebar */
+    }
+
+    /* The sidebar links */
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: black;
+      display: block;
+      transition: 0.3s;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      transition: margin-right .5s; /* If you want a transition effect */
+      padding: 20px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    }
+    body {
+        background: url('{% static "images/wooden-table-background-edit-coff.png" %}') no-repeat center center fixed
+        
+    }
+    #myname {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .appholder {
+
+        width: 100%;
+        height: 77%;
+    }
+    .appholderbottom {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .icon {
+        background-color: white;
+        width:50px;
+        height: 50px;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+        margin-right: 10px;
+        margin-top: 5px;
+
+    }
+    .icon:active {
+        box-shadow:inset 1px 1px 10px 0px #000000;
+    }
+    .iconbottom {
+        background-color: white;
+        width:50px;
+        height: 50px;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+    .iconbottom:active {
+        box-shadow:inset 1px 1px 10px 0px #000000;
+    }
+
+    #time {
+        margin-right: 88%;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    #battery {
+        margin-top: -20px;
+        margin-left: 90%;
+
+    }
+    #wifi {
+       margin-top: -20px;
+        margin-left: 79%;
+        margin-right: 5px;
+    }
+</style>
+
+<body>
+
+<div class="container main">
+    <div class="container inner">
+        <div class="container top">
+            {% timezone "Europe/Paris" %}
+            <a id="time">{% now "H:i" %}</a>
+            {% endtimezone %}
+            <i id="wifi" class="fas fa-wifi"></i>
+            <i id="battery" class="fas fa-battery-three-quarters"> 76%</i>
+        </div>
+        <h1 id="myname"></h1>
+        <div class="container appholder">
+            <img class="icon" src="static/images/album-icon.png">
+            <img class="icon" src="static/images/LinkedIn_logo_initials.png">
+            <img class="icon" src="static/images/GitHub-Mark.png">
+            <img class="icon" src="static/images/file-folder.png">
+            <img class="icon" src="static/images/education-icon.png">
+            <img class="icon" src="static/images/work-exp.png">
+            <img class="icon" src="static/images/skills-icon.jpg">
+        </div>
+        <div class="container appholderbottom">
+            <img class="iconbottom" src="static/images/mail-icon.png">
+            <img class="iconbottom" src="static/images/LinkedIn_logo_initials.png">
+            <img class="iconbottom" src="static/images/GitHub-Mark.png">
+        </div>
+    </div>
+    <button class="openbtn fas fa-caret-right" id="openbtn" onclick="openNav()"></button>
+    <div id="mySidebar" class="sidebar">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
+</div>
+
+</body>
+<script>
+function toggle(x) {
+  x.classList.toggle("fa-angle-left");
+}
+function myFunction() {
+  var x = document.getElementById("menucontainer");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    var elem = document.getElementById("mySidebar");
+        elem.setAttribute('style', (elem.clientWidth == 200) ? 'width: 0' : 'width: 200px');
+    var elembtn = document.getElementById("openbtn");
+        if (elembtn.style.right == "-215px") {
+            elembtn.style.right = "0px";
+            elembtn.style["boxShadow"] = "0 0 0px #000000";
+            elembtn.style.transform = "rotate(0deg)";
+        } else {
+            elembtn.style.right = "-215px";
+            elembtn.style.transform = "rotate(-180deg)";
+            elembtn.style["boxShadow"] = "0 0 4px #000000";
+        }
+}
+
+</script>
+</html>
