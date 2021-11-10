@@ -43,7 +43,8 @@
       top: 15%;
       left: 74.8%;
       float: right;
-      background-color: gray;
+      box-shadow: 1px 1px 4px 0px #000000;
+      background-color: #EEEEEE;
       overflow-x: hidden; /* Disable horizontal scroll */
       transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
     }
@@ -79,7 +80,6 @@
       color: #f1f1f1;
     }
 
-
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
     #main {
       transition: margin-right .5s; /* If you want a transition effect */
@@ -95,7 +95,6 @@
         background: url('{% static "images/wooden-table-background-edit-coff.png" %}') no-repeat center center fixed
         
     }
-
     .appholder {
         padding-top: 10px;
         width: 100%;
@@ -114,6 +113,7 @@
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
         margin-right: 10px;
         margin-top: 25px;
+        z-index: -10;
     }
     .icon:active {
         box-shadow:inset 1px 1px 10px 0px #000000;
@@ -169,7 +169,13 @@
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
     }
-
+    .sidebar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .sidebar::-webkit-scrollbar {
+        display: none;
+    }
     #albumscreen {
         padding-top: 30px;
         padding-left: 40px;
@@ -190,6 +196,11 @@
        border-radius: 10px;
        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
        margin-bottom:10px; /* to match column gap */
+       transition: transform 0.2s;
+    }
+    .albumimage:hover {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);
+        transform: scale(1.01);
     }
     @media (max-width: 1750px) {
        #albumscreen {
@@ -234,11 +245,236 @@
         z-index: 200;
     }
 
+    #test {
+        display: None;
+    }
 
+    #leftcontainer {
+        width: 20%;
+        height:90%;
+        padding-top: 30px;
+    }
+    .skillkat {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 30px;
+        border: 1px solid;
+        background-color: white;
+        text-align: center;
+        padding-top: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-bottom: 2px;
+        transition: width 0.3s;
+        z-index: 50;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+        cursor: pointer;
+    }
+    .skillkat:hover {
+        width: 120%;
+        background-color: gray;
+    }
+
+    .skillcontainer {
+        position: relative;
+        float: right;
+        border: 1px solid;
+        background-color: white;
+        height: 90%;
+        top: -412px;
+        width: 85%;
+        z-index: 20;
+        margin-right: 15px;
+    }
+    #sidecont {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 15px;
+        padding-left: 8px;
+    }
+    #contact {
+        width: 100%;
+        height: 100%;
+
+        display: none;
+    }
+    #contactform {
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+    input[type=text], select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    #subject {
+      height: 22%;
+      min-height: 22%;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    #education {
+        height: 95%;
+        width: 100%;
+
+        display: none;
+        padding-top: 10px;
+    }
+    .unied {
+        width: 100%;
+        height: 50%;
+        display: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: space-around;
+    }
+
+    .educat {
+        position: flex;
+        width: 20%;
+        height: 100%;
+        border: 1px solid;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s;
+    }
+    .educat:hover {
+        transform: scale(1.01);
+    }
+    .othered {
+      width: 100%;
+        height: 50%;
+        display: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: space-around;
+    }
+
+    .workexp {
+        display: none;
+        width: 100%;
+        height: 100%;
+
+    }
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 220%;
+      padding-top: 35px;
+
+    }
+
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #E5DADA;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      z-index: 0;
+    }
+    .expcont {
+      padding: 10px 40px;
+      position: relative;
+      background-color: #F4EEEE;
+      width: 25%;
+      border-radius: 15px;
+      margin-bottom: 26px;
+      margin-top: 13px;
+      border: 1px solid;
+
+    }
+    .circleright {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background-color: white;
+        border-radius: 15px;
+        border: 3px solid;
+        top: 10px;
+        left: -58px;
+        z-index: 2;
+
+    }
+    .circleleft {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background-color: white;
+        border-radius: 15px;
+        border: 3px solid;
+        top: 10px;
+        right: -65px;
+        z-index: 2;
+    }
+    .left {
+        left: 10%;
+        box-shadow:inset 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
+    }
+    .right {
+        left: 55%;
+        box-shadow:inset 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
+    }
+    .dates {
+        position: relative;
+        font-size: 30px;
+        font-weight: bold;
+        z-index: 3;
+    }
+    .worktitle {
+        position: relative;
+        z-index: 3;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .workdate {
+        position: relative;
+        background-color: white;
+        border: 1px solid;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.8);
+        top: -35px;
+    }
+    .tjanst {
+        position: relative;
+        top: -20px;
+        font-size: 18px;
+    }
 </style>
 
 <body>
-
 <div class="container main">
     <div class="container inner">
         <div id="top" class="container top">
@@ -250,6 +486,23 @@
         </div>
         <div id="content" class="container content">
             <a id="close" onclick="Showalbum()" class="fas fa-times fa-2x" ></a>
+            <!-- content for the contentscreen allways goes under this line -->
+            <!-- Färdigheter -->
+            <div id="test" class="container skillsscreen">
+                <div id="leftcontainer" class="container left">
+                    <a class="skillkat" id="kat1" onclick="kat2()">skill kat 1</a>
+                    <a class="skillkat" id="kat2" onclick="">skill kat 2</a>
+                    <a class="skillkat" id="kat3" onclick="kat3()">skill kat 3</a>
+                    <a class="skillkat" id="kat4" onclick="kat4()">skill kat 4</a>
+                    <a class="skillkat" id="kat5" onclick="kat5()">skill kat 5</a>
+                    <a class="skillkat" id="kat6" onclick="kat6()">skill kat 6</a>
+                    <a class="skillkat" id="kat7" onclick="kat7()">skill kat 7</a>
+                </div>
+                <div id="skillcontainer" class="container skillcontainer" >
+
+                </div>
+            </div>
+            <!-- Bilder på mig -->
             <div id="albumscreen" class="container albumscreen">
                 <img class="albumimage" src="static/images/DSC_0089.jpg">
                 <img class="albumimage" src="static/images/DSC_0140.jpg">
@@ -258,31 +511,122 @@
                 <img class="albumimage" src="static/images/wooden-table-background.jpg">
                 <img class="albumimage" src="static/images/wooden-table-background.jpg">
                 <img class="albumimage" src="static/images/wooden-table-background.jpg">
+            </div>
 
+            <!-- Kontakta mig -->
+            <div id="contact" class="container contactme">
+                <div id="contactform" class="container form">
+                    <h2>Contact Me</h2>
+                  <form action="action_page.php">
+                    <label for="lname">Your Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your name..">
+                    <label for="email">Email Adress</label>
+                    <input type="text" id="email" name="email" placeholder="Your email..">
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                    <input type="submit" value="Submit">
+                  </form>
+                </div>
+            </div>
+
+            <!-- Utbildning -->
+            <div id="education" class="row container education">
+                <h2 id="degreetitle">My Higher Education Degrees</h2>
+                <div id="unied" class="container unied">
+                    <div id="bachelor" class="column bachelor educat">
+                        <h2>Bachelor of Science<br><br>Social Psychology</h2>
+                    </div>
+                    <div id="Master1" class="column master1 educat">
+                        <h2>Master of Science <br>(60 credits) <br><br> Leadership and Organisation</h2>
+                    </div>
+                    <div id="master2" class="column master2 educat">
+                        <h2>Master of Science <br>(120 credits) <br><br> Leadership and Organisation</h2>
+                    </div>
+                </div>
+                <h2 id="degreeothertitle">My other Degrees</h2>
+                <div id="othered" class="container othered">
+
+                    <div id="gymn" class="column bachelor educat">
+                        <h2>Electrician</h2>
+                    </div>
+                    <div id="Armyservice" class="column master1 educat">
+                        <h2>Army Service</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- arbetslivserfarenheten -->
+            <div id="workexp" class="container workexp">
+                    <div class="timeline">
+                        <h2 class="worktitle">Work Experiance</h2>
+                        <div class="container expcont right" >
+                            <div class="circleright"></div>
+                            <p class="workdate">18 January - 31 July</p>
+                            <p class="tjanst">Beslutshandläggare on Arbetsförmedlingen</p>
+                        </div>
+                        <div class="dates">2021</div>
+                        <div class="container expcont left" >
+                            <div class="circleleft"></div>
+                            <p>Some sample text here</p>
+                        </div>
+                        <div class="dates">2020</div>
+                        <div class="container expcont right" >
+                            <div class="circleright"></div>
+                            <p>Some sample text here</p>
+                        </div>
+                        <div class="container expcont left" >
+                            <div class="circleleft"></div>
+                            <p>Some sample text here</p>
+                        </div>
+                        <div class="container expcont right" >
+                            <div class="circleright"></div>
+                            <p>Some sample text here</p>
+                        </div>
+                        <div class="container expcont left" >
+                            <div class="circleleft"></div>
+                            <p>Some sample text here</p>
+                        </div>
+                        <div class="container expcont right" >
+                            <div class="circleright"></div>
+                            <p>Some sample text here</p>
+                        </div>
+                        <div class="container expcont left" >
+                            <div class="circleleft"></div>
+                            <p>Some sample text here</p>
+                        </div>
+                    </div>
             </div>
         </div>
+
+        <!-- After this line is the app icon buttons -->
         <h1 id="myname"></h1>
         <div id="appholder" class="container appholder">
             <img class="icon" onclick="Hidealbum()" src="static/images/album-icon.png">
             <img class="icon" src="static/images/LinkedIn_logo_initials.png">
             <img class="icon" src="static/images/GitHub-Mark.png">
             <img class="icon" src="static/images/file-folder.png">
-            <img class="icon" src="static/images/education-icon.png">
-            <img class="icon" src="static/images/work-exp.png">
-            <img class="icon" src="static/images/skills-icon.jpg">
+            <img class="icon" onclick="Hideeducation()" src="static/images/education-icon.png">
+            <img class="icon" onclick="Hideworkexp()" src="static/images/work-exp.png">
+            <img class="icon" onclick="Hidetest()" src="static/images/skills-icon.jpg">
+            <img class="icon" src="static/images/about-img.png">
         </div>
         <div id="appholderbottom" class="container appholderbottom">
-            <img class="iconbottom" src="static/images/mail-icon.png">
+            <img class="iconbottom" onclick="Hidecontact()" src="static/images/mail-icon.png">
             <img class="iconbottom" src="static/images/LinkedIn_logo_initials.png">
             <img class="iconbottom" src="static/images/GitHub-Mark.png">
         </div>
     </div>
     <button class="openbtn fas fa-caret-right" id="openbtn" onclick="openNav()"></button>
     <div id="mySidebar" class="sidebar">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+        <div id="sidecont" class="container sidebarcont">
+        This is my CV i've made as a project to show my CV in a more intresting and fun way. Also in the same time show my programming knowledge and skills.
+        <br>
+        <br>
+        This is programmed in the Python Language with the webblibrary Django. The code is mostly made with CSS and Javascript.
+        <br>
+        <br>
+        Feel free to click around on the icons and explore. You can reach me by clicking on the mail icon or trough my linkedIn. Hope this sparks your intrest.
+        </div>
     </div>
 
 
@@ -312,15 +656,146 @@ function Hidealbum() {
         hide3.style.display = "block";
         hide4.style.display = "block";
 }
+function Hidetest() {
+    var hide = document.getElementById("appholder");
+    var hide2 = document.getElementById("appholderbottom");
+    var hide3 = document.getElementById("content");
+    var hide4 = document.getElementById("test");
+        hide.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "block";
+        hide4.style.display = "block";
+}
+function Hidecontact() {
+    var hide = document.getElementById("appholder");
+    var hide2 = document.getElementById("appholderbottom");
+    var hide3 = document.getElementById("content");
+    var hide4 = document.getElementById("contact");
+        hide.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "block";
+        hide4.style.display = "block";
+}
 
+function Hideeducation() {
+    var hide = document.getElementById("appholder");
+    var hide2 = document.getElementById("appholderbottom");
+    var hide3 = document.getElementById("content");
+    var hide4 = document.getElementById("education");
+    var hide5 = document.getElementById("unied");
+    var hide6 = document.getElementById("othered");
+        hide.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "block";
+        hide4.style.display = "block";
+        hide5.style.display = "flex";
+        hide6.style.display = "flex";
+}
+function Hideworkexp() {
+    var hide = document.getElementById("appholder");
+    var hide2 = document.getElementById("appholderbottom");
+    var hide3 = document.getElementById("content");
+    var hide4 = document.getElementById("workexp");
+
+        hide.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "block";
+        hide4.style.display = "block";
+
+
+}
 function Showalbum() {
     var hide = document.getElementById("appholder");
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
+    var hide4 = document.getElementById("albumscreen");
+    var hide5 = document.getElementById("test");
+    var hide6 = document.getElementById("contact")
+    var hide7 = document.getElementById("education")
+    var hide8 = document.getElementById("workexp")
         hide.style.display = "block";
         hide2.style.display = "block";
         hide3.style.display = "none";
+        if (hide4.style.display == "block") {
+            hide4.style.display = "none"; }
+        if (hide5.style.display == "block") {
+            hide5.style.display = "none"; }
+        if (hide6.style.display == "block") {
+            hide6.style.display = "none"; }
+        if (hide7.style.display == "block") {
+            hide7.style.display = "none"; }
+        if (hide8.style.display == "block") {
+            hide8.style.display = "none"; }
 }
+
+
+function kat1() {
+    var btnwidth1 = document.getElementsByClassName("skillkat");
+}
+function kat2() {
+    var all = kat1();
+    for (var i = 0; i < all.lenght; i++) {
+        var btnwidth = all[i].classlist;
+            btnwidth.toggle;
+    }
+}
+
+function kat3() {
+    var btnwidth = document.getElementsByClassName("skillkat");
+    var btnwidth2 = document.getElementById("kat3");
+        for(var i=0; i<btnwidth.length; i++) {
+            if (btnwidth[i].style.width == '120%') {
+                btnwidth[i].style.width='100%';
+            } else {
+                btnwidth2.style.width='120%';
+            }
+        }
+}
+function kat4() {
+    var btnwidth = document.getElementsByClassName("skillkat");
+    var btnwidth2 = document.getElementById("kat4");
+        for(var i=0; i<btnwidth.length; i++) {
+            if (btnwidth[i].style.width == '120%') {
+                btnwidth[i].style.width='100%';
+            } else {
+                btnwidth2.style.width='120%';
+            }
+        }
+}
+function kat5() {
+    var btnwidth = document.getElementsByClassName("skillkat");
+    var btnwidth2 = document.getElementById("kat5");
+        for(var i=0; i<btnwidth.length; i++) {
+            if (btnwidth[i].style.width == '120%') {
+                btnwidth[i].style.width='100%';
+            } else {
+                btnwidth2.style.width='120%';
+            }
+        }
+}
+function kat6() {
+    var btnwidth = document.getElementsByClassName("skillkat");
+    var btnwidth2 = document.getElementById("kat6");
+        for(var i=0; i<btnwidth.length; i++) {
+            if (btnwidth[i].style.width == '120%') {
+                btnwidth[i].style.width='100%';
+            } else {
+                btnwidth2.style.width='120%';
+            }
+        }
+}
+function kat7() {
+    var btnwidth = document.getElementsByClassName("skillkat");
+    var btnwidth2 = document.getElementById("kat7");
+        for(var i=0; i<btnwidth.length; i++) {
+            if (btnwidth[i].style.width == '120%') {
+                btnwidth[i].style.width='100%';
+            } else {
+                btnwidth2.style.width='120%';
+            }
+        }
+}
+
 
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
