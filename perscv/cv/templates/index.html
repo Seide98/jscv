@@ -25,6 +25,7 @@
             {% endtimezone %}
             <i id="wifi" class="fas fa-wifi"></i>
             <i id="battery" class="fas fa-battery-three-quarters"> 76%</i>
+
         </div>
         <div id="content" class="container content">
             <a id="close" onclick="Showalbum()" class="fas fa-times fa-2x" ></a>
@@ -177,20 +178,21 @@
             </div>
 
             <!-- Kontakta mig -->
-            <div id="contact" class="container contactme">
-                <div id="contactform" class="container form">
-                    <h2>Contact Me</h2>
-                  <form action="action_page.php">
-                    <label for="lname">Your Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your name..">
-                    <label for="email">Email Adress</label>
-                    <input type="text" id="email" name="email" placeholder="Your email..">
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
-                    <input type="submit" value="Submit">
-                  </form>
+            <form action="{% url 'index' %}" method="post">
+                {% csrf_token %}
+                <div id="contact" class="container contactme">
+                    <div id="contactform" class="container form">
+                        <h2>Contact Me</h2>
+                        <label for="lname">Your Name</label>
+                        <input type="text" id="lname" name="personname" placeholder="Your name..">
+                        <label for="email">Email Adress</label>
+                        <input type="text" id="email" name="email" placeholder="Your email..">
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                        <button type="submit">Submit</button>
+                    </div>
                 </div>
-            </div>
+            </form>
 
             <!-- Utbildning -->
             <div id="education" class="row container education">
