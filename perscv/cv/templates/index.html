@@ -263,6 +263,7 @@
         background-color: white;
         text-align: center;
         padding-top: 15px;
+        font: italic 700 14px arial;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         margin-bottom: 2px;
@@ -271,11 +272,22 @@
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
         cursor: pointer;
     }
-    .skillkat:hover {
+    #kat1 {
         width: 120%;
+        background: white;
+        background: linear-gradient(90deg, rgba(255,255,255,1) 12%, rgba(29,184,230,1) 99%);
+    }
+    #kat7 {
+        display: none;
+    }
+    .skillkat:hover {
+
+        width: 120% !important;
         background-color: gray;
     }
-
+    .skillkat:focus {
+        background-color: blue;
+    }
     .skillcontainer {
         position: relative;
         float: right;
@@ -286,6 +298,9 @@
         width: 85%;
         z-index: 20;
         margin-right: 15px;
+        box-shadow:inset 2px 0.5px 5px 0px black;
+        overflow: hidden;
+
     }
     #sidecont {
         padding-top: 15px;
@@ -296,8 +311,8 @@
     #contact {
         width: 100%;
         height: 100%;
-
         display: none;
+        overflow: auto;
     }
     #contactform {
         margin-left: 5%;
@@ -340,11 +355,18 @@
       resize: vertical;
     }
     #education {
-        height: 95%;
+        height: 100%;
         width: 100%;
-
+        padding-bottom: 10px;
         display: none;
         padding-top: 10px;
+        overflow: auto;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .education::-webkit-scrollbar {
+        display: none;
     }
     .unied {
         width: 100%;
@@ -352,6 +374,8 @@
         display: none;
         padding-left: 20px;
         padding-right: 20px;
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         justify-content: space-around;
     }
 
@@ -363,11 +387,42 @@
         margin-right: 10px;
         margin-bottom: 5px;
         border-radius: 15px;
+        background: url('{% static "images/umeåuni.jpg" %}') no-repeat center center;
+        background-size: cover;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
-        transition: transform 0.3s;
+        transition: transform 0.2s;
+    }
+    .educat2 {
+        position: flex;
+        width: 20%;
+        height: 100%;
+        border: 1px solid;
+        margin-right: 10px;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        transition: transform 0.2s;
     }
     .educat:hover {
         transform: scale(1.01);
+    }
+    .educat2:hover {
+        transform: scale(1.01);
+    }
+    #elec {
+        margin-bottom: 90px;
+    }
+    #armyserv {
+        margin-bottom: 90px;
+    }
+    #Armyservice {
+        background: url('{% static "images/sergeant.jpg" %}') no-repeat center center;
+        background-size: cover;
+    }
+    #gymn {
+        background: url('{% static "images/highvolt.png" %}') black no-repeat center;
+        background-size: contain;
     }
     .othered {
       width: 100%;
@@ -388,7 +443,7 @@
       position: relative;
       max-width: 1200px;
       margin: 0 auto;
-      height: 220%;
+      height: 280%;
       padding-top: 35px;
 
     }
@@ -407,16 +462,52 @@
       z-index: 0;
     }
     .expcont {
-      padding: 10px 40px;
+      padding: 10px 20px;
       position: relative;
       background-color: #F4EEEE;
       width: 25%;
       border-radius: 15px;
-      margin-bottom: 26px;
       margin-top: 13px;
       border: 1px solid;
+      z-index: 3;
+      cursor: pointer;
 
     }
+    .tjanst {
+        position: relative;
+        top: -20px;
+        font-size: 18px;
+    }
+    .description {
+        display: none;
+        position: relative;
+        top: -25px;
+        min-height: 3.9%;
+    }
+    .cardcont {
+      position: relative;
+
+    }
+
+    .expcont:hover .description {
+      display: block;
+      animation: fade_in_show 0.5s;
+    }
+    .expcont:hover .tjanst {
+        display: none;
+        animation: fade_out_show 0.9s;
+    }
+    @keyframes fade_in_show {
+        0% {display:none; opacity:0;}
+        1% {display:block; opacity:0;}
+        100% {display:block; opacity:1;}
+    }
+    @keyframes fade_out_show {
+        0% {display:block; opacity:1;}
+        1% {display:block; opacity:1;}
+        100% {display: none; opacity:0;}
+    }
+
     .circleright {
         position: absolute;
         width: 22px;
@@ -440,11 +531,13 @@
         right: -65px;
         z-index: 2;
     }
-    .left {
-        left: 10%;
+    .leftcont {
+        z-index: 10;
+        left: 14.5%;
         box-shadow:inset 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
     }
     .right {
+        z-index: 9;
         left: 55%;
         box-shadow:inset 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
     }
@@ -453,12 +546,20 @@
         font-size: 30px;
         font-weight: bold;
         z-index: 3;
+        background-color: white;
+        border: 1px solid;
+        width: 10%;
+        border-radius: 10px;
+        margin-left: 45%;
+        margin-bottom: 50px;
     }
     .worktitle {
         position: relative;
-        z-index: 3;
+        z-index: 4;
         font-weight: bold;
         font-size: 30px;
+        top: -20px;
+
     }
     .workdate {
         position: relative;
@@ -466,11 +567,268 @@
         border: 1px solid;
         box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.8);
         top: -35px;
+        font-weight: bold;
     }
-    .tjanst {
+
+    .personalchar {
+
+        display: block;
+        width: 80%;
+        height: 100%;
+        font-size: 22px;
+        padding-top: 10px;
+        overflow: hidden;
+
+    }
+    .perscont2 {
+        position: absolute;
+        width: 40%;
+        right: 45%;
+        text-align: left;
+    }
+    .perscont1 {
+        position: absolute;
+        left: 55%;
+        text-align: left;
+    }
+    .peronalcont {
+        margin-bottom: 2px;
+
+    }
+    .itcompcont {
+        display: none;
+        padding-left: 25%;
+        width: 60%;
+        height: 100%;
+        font-size: 22px;
+        padding-top: 8px;
+        overflow: hidden;
+    }
+    .containerit {
+      width: 100%;
+      background-color: #ddd;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+
+    }
+    .compitheadtext {
+        font-weight: bold;
+        margin-bottom: -15px;
+
+    }
+    .office {
         position: relative;
-        top: -20px;
-        font-size: 18px;
+        border-radius: 5px;
+        width: 90%;
+        height: 25px;
+        background-color: green;
+    }
+    .containerit .informationdata {
+        position: relative;
+        border-radius: 5px;
+        width: 75%;
+        height: 25px;
+        background-color: #2196F3;
+    }
+    .containerit .recman {
+        position: relative;
+        border-radius: 5px;
+        width: 80%;
+        height: 25px;
+        background-color: green;
+    }
+
+    .containerit .sharepoint {
+       position: relative;
+        border-radius: 5px;
+        width: 80%;
+        height: 25px;
+        background-color: green;
+    }
+    .skillscontprog {
+        position: relative;
+    }
+    .noskill {
+        position: absolute;
+        left: 18%;
+        margin-right: 5px;
+        margin-top: 20px;
+    }
+    .goodskill {
+        position: absolute;
+        right: 7%;
+        margin-top: 20px;
+    }
+    .noskill2 {
+        position: absolute;
+        left: 18%;
+        margin-right: 5px;
+        margin-top: 20px;
+    }
+    .goodskill2 {
+        position: absolute;
+        right: 7%;
+        margin-top: 20px;
+    }
+    .containerit .itcomptext {
+        visibility: hidden;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    .offce365:hover .itcomptext {
+        visibility:visible;
+        color: white;
+    }
+
+    .informationdata:hover .itcomptext {
+        visibility:visible;
+        color: white;
+    }
+    .recman:hover .itcomptext {
+        visibility:visible;
+        color: white;
+    }
+    .sharepoint:hover .itcomptext {
+        visibility:visible;
+        color: white;
+    }
+
+    .programcomp {
+        display: none;
+        padding-left: 25%;
+        width: 60%;
+        height: 100%;
+        font-size: 22px;
+        padding-top: 4px;
+    }
+    .skillscontprog {
+        overflow: auto;
+        height: 99%;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+
+    }
+    .skillscontprog::-webkit-scrollbar {
+        display: none;
+    }
+    .containerprog {
+      width: 100%;
+      background-color: #ddd;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+
+    }
+    .containerprog .progcomptext {
+        visibility: hidden;
+        text-align: right;
+        margin-right: 20px;
+    }
+    .compprogheadtext {
+        font-weight: bold;
+        margin-bottom: -15px;
+    }
+    .containerprog .python {
+       position: relative;
+        border-radius: 5px;
+        width: 85%;
+        height: 25px;
+        background-color: green;
+    }
+
+    .containerprog .javascript {
+        position: relative;
+        border-radius: 5px;
+        width: 40%;
+        height: 25px;
+        background-color: orange;
+    }
+    .containerprog .htmlcss {
+        position: relative;
+        border-radius: 5px;
+        width: 70%;
+        height: 25px;
+        background-color: green;
+    }
+    .containerprog .git {
+        position: relative;
+        border-radius: 5px;
+        width: 60%;
+        height: 25px;
+        background-color: orange;
+    }
+    .containerprog .ubuntu {
+        position: relative;
+        border-radius: 5px;
+        width: 50%;
+        height: 25px;
+        background-color: orange;
+    }
+    .containerprog .sql {
+        position: relative;
+        border-radius: 5px;
+        width: 60%;
+        height: 25px;
+        background-color: green;
+
+    }
+    .python:hover .progcomptext {
+        visibility:visible;
+        color: white;
+    }
+
+    .javascript:hover .progcomptext {
+        visibility:visible;
+        color: white;
+    }
+    .htmlcss:hover .progcomptext {
+        visibility:visible;
+        color: white;
+    }
+    .git:hover .progcomptext {
+        visibility:visible;
+        color: white;
+    }
+    .ubuntu:hover .progcomptext {
+        visibility:visible;
+        color: white;
+    }
+    .sql:hover .progcomptext {
+        visibility:visible;
+        color: white;
+    }
+    .langspeak {
+        display: none;
+        padding-left: 25%;
+        width: 60%;
+        height: 99%;
+        font-size: 22px;
+        padding-top: 4px;
+        overflow: hidden;
+        font: normal normal 700 20px ariel;
+    }
+    .langspeak h4 {
+        font: italic 700 23px serif;
+        color: blue;
+    }
+    .otherthing {
+        display: none;
+        padding-left: 25%;
+        width: 60%;
+        height: 70%;
+        font-size: 22px;
+        padding-top: 40px;
+        overflow: hidden;
+        font: normal normal 700 25px serif;
+    }
+    .referencesifnd {
+        display: none;
+        padding-left: 25%;
+        width: 60%;
+        height: 50%;
+        padding-top: 40px;
+        overflow: hidden;
+        font: normal normal 700 30px serif;
     }
 </style>
 
@@ -490,26 +848,147 @@
             <!-- Färdigheter -->
             <div id="test" class="container skillsscreen">
                 <div id="leftcontainer" class="container left">
-                    <a class="skillkat" id="kat1" onclick="kat2()">skill kat 1</a>
-                    <a class="skillkat" id="kat2" onclick="">skill kat 2</a>
-                    <a class="skillkat" id="kat3" onclick="kat3()">skill kat 3</a>
-                    <a class="skillkat" id="kat4" onclick="kat4()">skill kat 4</a>
-                    <a class="skillkat" id="kat5" onclick="kat5()">skill kat 5</a>
-                    <a class="skillkat" id="kat6" onclick="kat6()">skill kat 6</a>
+                    <a class="skillkat" id="kat1" onclick="kat1()">Personal Characteristics</a>
+                    <a class="skillkat" id="kat2" onclick="kat2()">It-competence</a>
+                    <a class="skillkat" id="kat3" onclick="kat3()">Programing-languages</a>
+                    <a class="skillkat" id="kat4" onclick="kat4()">Languages</a>
+                    <a class="skillkat" id="kat5" onclick="kat5()">Other</a>
+                    <a class="skillkat" id="kat6" onclick="kat6()">References</a>
                     <a class="skillkat" id="kat7" onclick="kat7()">skill kat 7</a>
                 </div>
                 <div id="skillcontainer" class="container skillcontainer" >
-
+                    <div class="personalchar" id="personalchar">
+                        <ul class="perscont1">
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Eager to learn</p><br>
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Open-minded and Curious</p><br>
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Accurate in my tasks</p><br>
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Fear no challange</p><br>
+                        </ul>
+                        <ul class="perscont2">
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Stress resistant</p><br>
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Service-oriented</p><br>
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Fast learner and understands the given information fast</p><br>
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> I enjoy to work independently but i also thrive from groupwork</p><br>
+                        </ul>
+                    </div>
+                    <div id="itcompcont" class="itcompcont">
+                        <p class="compitheadtext">Office 365</p>
+                        <div class="noskill">None</div>
+                        <div class="goodskill">Good</div>
+                        <div class="containerit offce365">
+                            <div class="skillit office">
+                                <p class="itcomptext">90%</p>
+                            </div>
+                        </div>
+                        <p class="compitheadtext">Information-databases for research</p>
+                        <div class="noskill">None</div>
+                        <div class="goodskill">Good</div>
+                        <div class="containerit informationdata">
+                            <div class="skillit informationdata">
+                                <p class="itcomptext">75%</p>
+                            </div>
+                        </div>
+                        <p class="compitheadtext">Recman</p>
+                        <div class="noskill">None</div>
+                        <div class="goodskill">Good</div>
+                        <div class="containerit recman">
+                            <div class="skillit recman">
+                                <p class="itcomptext">80%</p>
+                            </div>
+                        </div>
+                        <p class="compitheadtext">Sharepoint</p>
+                        <div class="noskill">None</div>
+                        <div class="goodskill">Good</div>
+                        <div class="containerit sharepoint">
+                            <div class="skillit sharepoint">
+                                <p class="itcomptext">80%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- programing language skills -->
+                    <div class="skillscontprog">
+                        <div id="programcomp" class="programcomp">
+                            <p class="compprogheadtext">Python</p>
+                            <div class="noskill2">None</div>
+                            <div class="goodskill2">Good</div>
+                            <div class="containerprog python">
+                                <div class="skillprog python">
+                                    <p class="progcomptext">85%</p>
+                                </div>
+                            </div>
+                            <p class="compprogheadtext">Javascript</p>
+                            <div class="noskill2">None</div>
+                            <div class="goodskill2">Good</div>
+                            <div class="containerprog javascript">
+                                <div class="skillprog javascript">
+                                    <p class="progcomptext">40%</p>
+                                </div>
+                            </div>
+                            <p class="compprogheadtext">HTML/CSS</p>
+                            <div class="noskill2">None</div>
+                            <div class="goodskill2">Good</div>
+                            <div class="containerprog htmlcss">
+                                <div class="skillprog htmlcss">
+                                    <p class="progcomptext">70%</p>
+                                </div>
+                            </div>
+                            <p class="compprogheadtext">GIT</p>
+                            <div class="noskill2">None</div>
+                            <div class="goodskill2">Good</div>
+                            <div class="containerprog git">
+                                <div class="skillprog git">
+                                    <p class="progcomptext">60%</p>
+                                </div>
+                            </div>
+                            <p class="compprogheadtext">Ubuntu</p>
+                            <div class="noskill2">None</div>
+                            <div class="goodskill2">Good</div>
+                            <div class="containerprog ubuntu">
+                                <div class="skillprog ubuntu">
+                                    <p class="progcomptext">50%</p>
+                                </div>
+                            </div>
+                            <p class="compprogheadtext">SQL</p>
+                            <div class="noskill2">None</div>
+                            <div class="goodskill2">Good</div>
+                            <div class="containerprog sql">
+                                <div class="skillprog sql">
+                                    <p class="progcomptext">60%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Språk jag kan-->
+                        <div id="langspeak" class="langspeak">
+                            <div class="langmother">
+                                <h3>Native Language</h3>
+                                <h4>Swedish</h4>
+                            </div>
+                            <div class="langfluent">
+                                <h3>Languages that i am fluent in</h3>
+                                <h4>English</h4>
+                            </div>
+                            <div class="langnovice">
+                                <h3>Languages that i am novice in</h3>
+                                <h4>German</h4>
+                            </div>
+                        </div>
+                        <div id="otherthing" class="otherthing">
+                            <h4>I have a driving license and a car that i can use for work</h4>
+                            <h4>I can also work from home if necessary</h4>
+                        </div>
+                        <div id="referencesifnd" class="referencesifnd">
+                            <h4>If you're intressted in my competence and after we've spoken i can provide you with my references</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Bilder på mig -->
             <div id="albumscreen" class="container albumscreen">
                 <img class="albumimage" src="static/images/DSC_0089.jpg">
                 <img class="albumimage" src="static/images/DSC_0140.jpg">
-                <img class="albumimage" src="static/images/wooden-table-background.jpg">
-                <img class="albumimage" src="static/images/wooden-table-background.jpg">
-                <img class="albumimage" src="static/images/wooden-table-background.jpg">
-                <img class="albumimage" src="static/images/wooden-table-background.jpg">
+                <img class="albumimage" src="static/images/picture1.jpg">
+                <img class="albumimage" src="static/images/picture6.png">
+                <img class="albumimage" src="static/images/picture4.jpg">
                 <img class="albumimage" src="static/images/wooden-table-background.jpg">
             </div>
 
@@ -546,11 +1025,13 @@
                 <h2 id="degreeothertitle">My other Degrees</h2>
                 <div id="othered" class="container othered">
 
-                    <div id="gymn" class="column bachelor educat">
-                        <h2>Electrician</h2>
+                    <div id="gymn" class="column bachelor educat2">
+                        <h2 id="elec">Electrician</h2>
+                        <h2>Dragonskolan 2006-2009</h2>
                     </div>
-                    <div id="Armyservice" class="column master1 educat">
-                        <h2>Army Service</h2>
+                    <div id="Armyservice" class="column master1 educat2">
+                        <h2 id="armyserv">Army Service</h2>
+                        <h2>Systemtekniker 2009-2010</h2>
                     </div>
                 </div>
             </div>
@@ -561,38 +1042,67 @@
                         <h2 class="worktitle">Work Experiance</h2>
                         <div class="container expcont right" >
                             <div class="circleright"></div>
-                            <p class="workdate">18 January - 31 July</p>
-                            <p class="tjanst">Beslutshandläggare on Arbetsförmedlingen</p>
+                            <p class="workdate">18 January - 31 July | 2021</p>
+                            <div class="cardcont">
+                                <p class="tjanst">Beslutshandläggare on Arbetsförmedlingen</p>
+                                <p class="description">I was daily in contact with unemployed people were i had the task of deciding (against rules and regulations)
+                                if they were eligible for help in their worksearch in form of Stöd och Matchning. I also answered incoming phonecalls with all sorts of questions from unemployed people.
+                                <br> My position was removed on 31 of July due to budget cuts and prioritising of the bigger cities. </p>
+                            </div>
                         </div>
-                        <div class="dates">2021</div>
-                        <div class="container expcont left" >
+                        <div class="container expcont leftcont" >
                             <div class="circleleft"></div>
-                            <p>Some sample text here</p>
-                        </div>
-                        <div class="dates">2020</div>
-                        <div class="container expcont right" >
-                            <div class="circleright"></div>
-                            <p>Some sample text here</p>
-                        </div>
-                        <div class="container expcont left" >
-                            <div class="circleleft"></div>
-                            <p>Some sample text here</p>
-                        </div>
-                        <div class="container expcont right" >
-                            <div class="circleright"></div>
-                            <p>Some sample text here</p>
-                        </div>
-                        <div class="container expcont left" >
-                            <div class="circleleft"></div>
-                            <p>Some sample text here</p>
+                            <p class="workdate">1 January - 31 April | 2020</p>
+                            <div class="cardcont">
+                                <p class="tjanst">Rekryterare on OnePartnerGroup AB</p>
+                                <p class="description">I worked as a recruiter were i did all sorts of tasks related to the recruitment process. I did interviews (over the phone and in person),
+                                called references, sifted the candidates and created the job advertisements <br> I was let go from the position due to the outbreak of Covid-19.
+                                And due to the economical decline in the industry created by the outbreak,
+                                they didn't have the resources to keep me.</p>
+                            </div>
                         </div>
                         <div class="container expcont right" >
                             <div class="circleright"></div>
-                            <p>Some sample text here</p>
+                            <div class="cardcont">
+                                <p class="workdate"> 2014 - 2018</p>
+                                <p class="tjanst">Vaktmästare on Västerbottens läns landsting</p>
+                                <p class="description">I worked as a janitor at Habiliteringscentrum were i was called in when some janitorial duties hade come up.
+                                    I was also in charge of the cleaning and some of the maintenance of their work-cars</p>
+                            </div>
                         </div>
-                        <div class="container expcont left" >
+                        <div class="container expcont leftcont" >
                             <div class="circleleft"></div>
-                            <p>Some sample text here</p>
+                            <div class="cardcont">
+                                <p class="workdate">1 April - 30 June | 2017</p>
+                                <p class="tjanst">Säljare on Biltema Umeå</p>
+                                <p class="description">Worked as a salesperson on Biltema were i helped customers find the product they were after in
+                                    the store. A big part of the work was also to help them with consulting regarding products they needed for their projects and suggest what they needed</p>
+                            </div>
+                        </div>
+                        <div class="container expcont right" >
+                            <div class="circleright"></div>
+                            <div class="cardcont">
+                                <p class="workdate">June - August | 2015</p>
+                                <p class="tjanst">Logistikansvarig on Myrorna Umeå</p>
+                                <p class="description">During the summoner i was in charge of the logistics between Myrornas store and their warehouse in Umeå.
+                                    I also went out and collected all the donations that was donated all across the city.</p>
+                            </div>
+                        </div>
+                        <div class="container expcont leftcont" >
+                            <div class="circleleft"></div>
+                            <div class="cardcont">
+                                <p class="workdate">April - August | 2012</p>
+                                <p class="tjanst">Vaktmästare on Länsstyrelsen Västerbotten</p>
+                                <p class="description">Worked as a janitor and did all sorts of tasks and services </p>
+                            </div>
+                        </div>
+                        <div class="container expcont right" >
+                            <div class="circleright"></div>
+                            <div class="cardcont">
+                                <p class="workdate">October - November | 2011</p>
+                                <p class="tjanst">Fastighetsskötare on Umeå Energi</p>
+                                <p class="description">Worked as a janitor and was in charge of alot of the companies different properties and janitorial tasks at their main office in Umeå</p>
+                            </div>
                         </div>
                     </div>
             </div>
@@ -612,10 +1122,11 @@
         </div>
         <div id="appholderbottom" class="container appholderbottom">
             <img class="iconbottom" onclick="Hidecontact()" src="static/images/mail-icon.png">
-            <img class="iconbottom" src="static/images/LinkedIn_logo_initials.png">
-            <img class="iconbottom" src="static/images/GitHub-Mark.png">
+            <img class="iconbottom" onclick="window.open('https://www.linkedin.com/in/jacob-seidegård-b80412b7')" src="static/images/LinkedIn_logo_initials.png">
+            <img class="iconbottom" onclick="window.open('https://github.com/Seide98')" src="static/images/GitHub-Mark.png">
         </div>
     </div>
+    <!-- Sidebaren -->
     <button class="openbtn fas fa-caret-right" id="openbtn" onclick="openNav()"></button>
     <div id="mySidebar" class="sidebar">
         <div id="sidecont" class="container sidebarcont">
@@ -730,72 +1241,208 @@ function Showalbum() {
 
 
 function kat1() {
-    var btnwidth1 = document.getElementsByClassName("skillkat");
+    var btnwidth = document.getElementsByClassName("skillkat");
+    var btnwidth2 = document.getElementById("kat1");
+    var show = document.getElementById("personalchar");
+    var hide1 = document.getElementById("itcompcont");
+    var hide2 = document.getElementById("programcomp");
+    var hide3 = document.getElementById("langspeak");
+    var hide4 = document.getElementById("otherthing");
+    var hide5 = document.getElementById("referencesifnd");
+
+        for(var i=0; i<btnwidth.length; i++) {
+            if (btnwidth[i].style.width == '120%') {
+                btnwidth[i].style.width='100%';
+                btnwidth[i].style.backgroundImage = "none";
+            } else {
+                btnwidth2.style.width='120%';
+                btnwidth2.style.backgroundImage = "linear-gradient(90deg, rgba(255,255,255,0.39539565826330536) 12%, rgba(29,184,230,1) 99%)";
+            }
+        }
+    show.style.display = "block";
+    hide1.style.display = "none";
+    hide2.style.display = "none";
+    hide3.style.display = "none";
+    hide4.style.display = "none";
+    hide5.style.display = "none";
+
+
 }
+
 function kat2() {
-    var all = kat1();
-    for (var i = 0; i < all.lenght; i++) {
-        var btnwidth = all[i].classlist;
-            btnwidth.toggle;
-    }
+    var btnwidth = document.getElementsByClassName("skillkat");
+    var btnwidth2 = document.getElementById("kat2");
+    var btnwidth3 = document.getElementById("kat1");
+    var hide1 = document.getElementById("personalchar");
+    var show = document.getElementById("itcompcont");
+    var hide2 = document.getElementById("programcomp");
+    var hide3 = document.getElementById("langspeak");
+    var hide4 = document.getElementById("otherthing");
+    var hide5 = document.getElementById("referencesifnd");
+
+            btnwidth3.style.width='100%';
+            btnwidth3.style.backgroundImage = "none";
+            btnwidth3.style.backgroundColor = "white";
+        for(var i=0; i<btnwidth.length; i++) {
+            if (btnwidth[i].style.width == '120%') {
+                btnwidth[i].style.width='100%';
+                btnwidth[i].style.backgroundImage = "none";
+            } else {
+                btnwidth2.style.width='120%';
+                btnwidth2.style.backgroundImage = "linear-gradient(90deg, rgba(255,255,255,0.39539565826330536) 12%, rgba(29,184,230,1) 99%)";
+            }
+        }
+    show.style.display = "block";
+    hide1.style.display = "none";
+    hide2.style.display = "none";
+    hide3.style.display = "none";
+    hide4.style.display = "none";
+    hide5.style.display = "none";
 }
 
 function kat3() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat3");
+    var btnwidth3 = document.getElementById("kat1");
+    var show = document.getElementById("programcomp");
+    var hide1 = document.getElementById("personalchar");
+    var hide2 = document.getElementById("itcompcont");
+    var hide3 = document.getElementById("langspeak");
+    var hide4 = document.getElementById("otherthing");
+    var hide5 = document.getElementById("referencesifnd");
+
+            btnwidth3.style.width='100%';
+            btnwidth3.style.backgroundImage = "none";
+            btnwidth3.style.backgroundColor = "white";
         for(var i=0; i<btnwidth.length; i++) {
             if (btnwidth[i].style.width == '120%') {
                 btnwidth[i].style.width='100%';
+                btnwidth[i].style.backgroundImage = "none";
             } else {
                 btnwidth2.style.width='120%';
+                btnwidth2.style.backgroundImage = "linear-gradient(90deg, rgba(255,255,255,0.39539565826330536) 12%, rgba(29,184,230,1) 99%)";
             }
         }
+    show.style.display = "block";
+    hide1.style.display = "none";
+    hide2.style.display = "none";
+    hide3.style.display = "none";
+    hide4.style.display = "none";
+    hide5.style.display = "none";
 }
 function kat4() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat4");
+    var btnwidth3 = document.getElementById("kat1");
+    var show = document.getElementById("langspeak");
+    var hide3 = document.getElementById("programcomp");
+    var hide1 = document.getElementById("personalchar");
+    var hide2 = document.getElementById("itcompcont");
+    var hide4 = document.getElementById("otherthing");
+    var hide5 = document.getElementById("referencesifnd");
+
+            btnwidth3.style.width='100%';
+            btnwidth3.style.backgroundImage = "none";
+            btnwidth3.style.backgroundColor = "white";
         for(var i=0; i<btnwidth.length; i++) {
             if (btnwidth[i].style.width == '120%') {
                 btnwidth[i].style.width='100%';
+                btnwidth[i].style.backgroundImage = "none";
             } else {
                 btnwidth2.style.width='120%';
+                btnwidth2.style.backgroundImage = "linear-gradient(90deg, rgba(255,255,255,0.39539565826330536) 12%, rgba(29,184,230,1) 99%)";
             }
         }
+        show.style.display = "block";
+        hide1.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "none";
+        hide4.style.display = "none";
+        hide5.style.display = "none";
 }
 function kat5() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat5");
+    var btnwidth3 = document.getElementById("kat1");
+    var show = document.getElementById("otherthing");
+    var hide4 = document.getElementById("langspeak");
+    var hide3 = document.getElementById("programcomp");
+    var hide1 = document.getElementById("personalchar");
+    var hide2 = document.getElementById("itcompcont");
+    var hide5 = document.getElementById("referencesifnd");
+
+            btnwidth3.style.width='100%';
+            btnwidth3.style.backgroundImage = "none";
+            btnwidth3.style.backgroundColor = "white";
         for(var i=0; i<btnwidth.length; i++) {
             if (btnwidth[i].style.width == '120%') {
                 btnwidth[i].style.width='100%';
+                btnwidth[i].style.backgroundImage = "none";
             } else {
                 btnwidth2.style.width='120%';
+                btnwidth2.style.backgroundImage = "linear-gradient(90deg, rgba(255,255,255,0.39539565826330536) 12%, rgba(29,184,230,1) 99%)";
             }
         }
+        show.style.display = "block";
+        hide1.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "none";
+        hide4.style.display = "none";
+        hide5.style.display = "none";
+
+
 }
 function kat6() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat6");
+    var btnwidth3 = document.getElementById("kat1");
+    var show = document.getElementById("referencesifnd");
+    var hide5 = document.getElementById("otherthing");
+    var hide4 = document.getElementById("langspeak");
+    var hide3 = document.getElementById("programcomp");
+    var hide1 = document.getElementById("personalchar");
+    var hide2 = document.getElementById("itcompcont");
+
+            btnwidth3.style.width='100%';
+            btnwidth3.style.backgroundImage = "none";
+            btnwidth3.style.backgroundColor = "white";
         for(var i=0; i<btnwidth.length; i++) {
             if (btnwidth[i].style.width == '120%') {
                 btnwidth[i].style.width='100%';
+                btnwidth[i].style.backgroundImage = "none";
             } else {
                 btnwidth2.style.width='120%';
+                btnwidth2.style.backgroundImage = "linear-gradient(90deg, rgba(255,255,255,0.39539565826330536) 12%, rgba(29,184,230,1) 99%)";
             }
         }
+        show.style.display = "block";
+        hide1.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "none";
+        hide4.style.display = "none";
+        hide5.style.display = "none";
 }
 function kat7() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat7");
+    var btnwidth3 = document.getElementById("kat1");
+            btnwidth3.style.width='100%';
+            btnwidth3.style.backgroundImage = "none";
+            btnwidth3.style.backgroundColor = "white";
         for(var i=0; i<btnwidth.length; i++) {
             if (btnwidth[i].style.width == '120%') {
                 btnwidth[i].style.width='100%';
+                btnwidth[i].style.backgroundImage = "none";
             } else {
                 btnwidth2.style.width='120%';
+                btnwidth2.style.backgroundImage = "linear-gradient(90deg, rgba(255,255,255,0.39539565826330536) 12%, rgba(29,184,230,1) 99%)";
             }
         }
 }
 
+function clicklinkedin() {
+  location.href = "https://www.linkedin.com/in/jacob-seidegård-b80412b7";
+}
 
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
