@@ -1,0 +1,78 @@
+#education {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 10px;
+        display: none;
+        padding-top: 10px;
+        overflow: auto;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .education::-webkit-scrollbar {
+        display: none;
+    }
+    .unied {
+        width: 100%;
+        height: 50%;
+        display: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: black;
+        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        justify-content: space-around;
+    }
+
+    .educat {
+        position: flex;
+        width: 20%;
+        height: 100%;
+        border: 1px solid;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        border-radius: 15px;
+        background: url('../images/education/umeåuni.jpg') no-repeat center center;
+        background-size: cover;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+        transition: transform 0.2s;
+    }
+    .educat2 {
+        position: flex;
+        width: 20%;
+        height: 100%;
+        border: 1px solid;
+        margin-right: 10px;
+        border-radius: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        transition: transform 0.2s;
+    }
+    .educat:hover {
+        transform: scale(1.01);
+    }
+    .educat2:hover {
+        transform: scale(1.01);
+    }
+    #elec {
+        margin-bottom: 90px;
+    }
+    #armyserv {
+        margin-bottom: 90px;
+    }
+    #Armyservice {
+        background: url('../images/education/sergeant.jpg') no-repeat center center;
+        background-size: cover;
+    }
+    #gymn {
+        background: url('../images/education/highvolt.png') black no-repeat center;
+        background-size: contain;
+    }
+    .othered {
+      width: 100%;
+        height: 50%;
+        display: none;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: space-around;
+    }
