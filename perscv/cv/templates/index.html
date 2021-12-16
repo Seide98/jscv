@@ -7,8 +7,30 @@
     <meta charset="UTF-8">
     <title>CVJS</title>
 </head>
+<script type="text/javascript">
+function startTime()
+{
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
 
-<body>
+    m=checkTime(m);
+    s=checkTime(s);
+    document.getElementById('time').innerHTML=h+":"+m;
+    t=setTimeout('startTime()',50);
+}
+    function checkTime(i)
+{
+    if (i<10)
+{
+    i="0" + i;
+}
+    return i;
+}
+</script>
+
+<body onload="startTime()">
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 <link rel="stylesheet" href="{% static 'css/education.css' %}">
 <link rel="stylesheet" href="{% static 'css/selfimages.css' %}">
@@ -16,16 +38,16 @@
 <link rel="stylesheet" href="{% static 'css/experiance.css' %}">
 <link rel="stylesheet" href="{% static 'css/contactme.css' %}">
 <link rel="stylesheet" href="{% static 'css/sidebtn.css' %}">
+<link rel="stylesheet" href="{% static 'css/document.css' %}">
 
 <div class="container main">
     <div class="container inner">
         <div id="top" class="container top">
             {% timezone "Europe/Paris" %}
-            <a id="time">{% now "H:i" %}</a>
+            <a id="time"></a>
             {% endtimezone %}
             <i id="wifi" class="fas fa-wifi"></i>
             <i id="battery" class="fas fa-battery-three-quarters"> 76%</i>
-
         </div>
         <div id="content" class="container content">
             <a id="close" onclick="Showalbum()" class="fas fa-times fa-2x" ></a>
@@ -176,7 +198,6 @@
                 <img class="albumimage" src="static/images/picture4.jpg">
                 <img class="albumimage" src="static/images/wooden-table-background.jpg">
             </div>
-
             <!-- Kontakta mig -->
             <form action="{% url 'index' %}" method="post">
                 {% csrf_token %}
@@ -193,7 +214,6 @@
                     </div>
                 </div>
             </form>
-
             <!-- Utbildning -->
             <div id="education" class="row container education">
                 <h2 id="degreetitle">My Higher Education Degrees</h2>
@@ -208,7 +228,7 @@
                         <h2>Master of Science <br>(120 credits) <br><br> Leadership and Organisation</h2>
                     </div>
                 </div>
-                <h2 id="degreeothertitle">My other Degrees</h2>
+                <h2 id="degreeothertitle">My other educations</h2>
                 <div id="othered" class="container othered">
 
                     <div id="gymn" class="column bachelor educat2">
@@ -221,98 +241,140 @@
                     </div>
                 </div>
             </div>
-
             <!-- arbetslivserfarenheten -->
             <div id="workexp" class="container workexp">
-                    <div class="timeline">
-                        <h2 class="worktitle">Work Experiance</h2>
-                        <div class="container expcont right" >
-                            <div class="circleright"></div>
-                            <p class="workdate">18 January - 31 July | 2021</p>
-                            <div class="cardcont">
-                                <p class="tjanst">Beslutshandläggare on Arbetsförmedlingen</p>
-                                <p class="description">I was daily in contact with unemployed people were i had the task of deciding (against rules and regulations)
-                                if they were eligible for help in their worksearch in form of Stöd och Matchning. I also answered incoming phonecalls with all sorts of questions from unemployed people.
-                                <br> My position was removed on 31 of July due to budget cuts and prioritising of the bigger cities. </p>
-                            </div>
-                        </div>
-                        <div class="container expcont leftcont" >
-                            <div class="circleleft"></div>
-                            <p class="workdate">1 January - 31 April | 2020</p>
-                            <div class="cardcont">
-                                <p class="tjanst">Rekryterare on OnePartnerGroup AB</p>
-                                <p class="description">I worked as a recruiter were i did all sorts of tasks related to the recruitment process. I did interviews (over the phone and in person),
-                                called references, sifted the candidates and created the job advertisements <br> I was let go from the position due to the outbreak of Covid-19.
-                                And due to the economical decline in the industry created by the outbreak,
-                                they didn't have the resources to keep me.</p>
-                            </div>
-                        </div>
-                        <div class="container expcont right" >
-                            <div class="circleright"></div>
-                            <div class="cardcont">
-                                <p class="workdate"> 2014 - 2018</p>
-                                <p class="tjanst">Vaktmästare on Västerbottens läns landsting</p>
-                                <p class="description">I worked as a janitor at Habiliteringscentrum were i was called in when some janitorial duties hade come up.
-                                    I was also in charge of the cleaning and some of the maintenance of their work-cars</p>
-                            </div>
-                        </div>
-                        <div class="container expcont leftcont" >
-                            <div class="circleleft"></div>
-                            <div class="cardcont">
-                                <p class="workdate">1 April - 30 June | 2017</p>
-                                <p class="tjanst">Säljare on Biltema Umeå</p>
-                                <p class="description">Worked as a salesperson on Biltema were i helped customers find the product they were after in
-                                    the store. A big part of the work was also to help them with consulting regarding products they needed for their projects and suggest what they needed</p>
-                            </div>
-                        </div>
-                        <div class="container expcont right" >
-                            <div class="circleright"></div>
-                            <div class="cardcont">
-                                <p class="workdate">June - August | 2015</p>
-                                <p class="tjanst">Logistikansvarig on Myrorna Umeå</p>
-                                <p class="description">During the summoner i was in charge of the logistics between Myrornas store and their warehouse in Umeå.
-                                    I also went out and collected all the donations that was donated all across the city.</p>
-                            </div>
-                        </div>
-                        <div class="container expcont leftcont" >
-                            <div class="circleleft"></div>
-                            <div class="cardcont">
-                                <p class="workdate">April - August | 2012</p>
-                                <p class="tjanst">Vaktmästare on Länsstyrelsen Västerbotten</p>
-                                <p class="description">Worked as a janitor and did all sorts of tasks and services </p>
-                            </div>
-                        </div>
-                        <div class="container expcont right" >
-                            <div class="circleright"></div>
-                            <div class="cardcont">
-                                <p class="workdate">October - November | 2011</p>
-                                <p class="tjanst">Fastighetsskötare on Umeå Energi</p>
-                                <p class="description">Worked as a janitor and was in charge of alot of the companies different properties and janitorial tasks at their main office in Umeå</p>
-                            </div>
+                <div class="timeline">
+                    <h2 class="worktitle">Work Experiance</h2>
+                    <div class="container expcont right">
+                        <div class="circleright"></div>
+                        <p class="workdate">18 January - 31 July | 2021</p>
+                        <div class="cardcont">
+                            <p class="tjanst">Beslutshandläggare on Arbetsförmedlingen</p>
+                            <p class="description">I was daily in contact with unemployed people were i had the task of
+                                deciding (against rules and regulations)
+                                if they were eligible for help in their worksearch in form of Stöd och Matchning. I also
+                                answered incoming phonecalls with all sorts of questions from unemployed people.
+                                <br> My position was removed on 31 of July due to budget cuts and prioritising of the
+                                bigger cities. </p>
                         </div>
                     </div>
+                    <div class="container expcont leftcont">
+                        <div class="circleleft"></div>
+                        <p class="workdate">1 January - 31 April | 2020</p>
+                        <div class="cardcont">
+                            <p class="tjanst">Rekryterare on OnePartnerGroup AB</p>
+                            <p class="description">I worked as a recruiter were i did all sorts of tasks related to the
+                                recruitment process. I did interviews (over the phone and in person),
+                                called references, sifted the candidates and created the job advertisements <br> I was
+                                let go from the position due to the outbreak of Covid-19.
+                                And due to the economical decline in the industry created by the outbreak,
+                                they didn't have the resources to keep me.</p>
+                        </div>
+                    </div>
+                    <div class="container expcont right">
+                        <div class="circleright"></div>
+                        <div class="cardcont">
+                            <p class="workdate"> 2014 - 2018</p>
+                            <p class="tjanst">Vaktmästare on Västerbottens läns landsting</p>
+                            <p class="description">I worked as a janitor at Habiliteringscentrum were i was called in
+                                when some janitorial duties hade come up.
+                                I was also in charge of the cleaning and some of the maintenance of their work-cars</p>
+                        </div>
+                    </div>
+                    <div class="container expcont leftcont">
+                        <div class="circleleft"></div>
+                        <div class="cardcont">
+                            <p class="workdate">1 April - 30 June | 2017</p>
+                            <p class="tjanst">Säljare on Biltema Umeå</p>
+                            <p class="description">Worked as a salesperson on Biltema were i helped customers find the
+                                product they were after in
+                                the store. A big part of the work was also to help them with consulting regarding
+                                products they needed for their projects and suggest what they needed</p>
+                        </div>
+                    </div>
+                    <div class="container expcont right">
+                        <div class="circleright"></div>
+                        <div class="cardcont">
+                            <p class="workdate">June - August | 2015</p>
+                            <p class="tjanst">Logistikansvarig on Myrorna Umeå</p>
+                            <p class="description">During the summoner i was in charge of the logistics between Myrornas
+                                store and their warehouse in Umeå.
+                                I also went out and collected all the donations that was donated all across the
+                                city.</p>
+                        </div>
+                    </div>
+                    <div class="container expcont leftcont">
+                        <div class="circleleft"></div>
+                        <div class="cardcont">
+                            <p class="workdate">April - August | 2012</p>
+                            <p class="tjanst">Vaktmästare on Länsstyrelsen Västerbotten</p>
+                            <p class="description">Worked as a janitor and did all sorts of tasks and services </p>
+                        </div>
+                    </div>
+                    <div class="container expcont right">
+                        <div class="circleright"></div>
+                        <div class="cardcont">
+                            <p class="workdate">October - November | 2011</p>
+                            <p class="tjanst">Fastighetsskötare on Umeå Energi</p>
+                            <p class="description">Worked as a janitor and was in charge of alot of the companies
+                                different properties and janitorial tasks at their main office in Umeå</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Documents folder -->
+            <div id="document" class="container document">
+                <div class="docgeneral">
+                    <div class="documenttext">Documents for more indepth information about me</div>
+                    <div class="container doc" id="doc2"><a href="{% static 'documents/JacobSeidegårdCV.pdf' %}" target="_blank">
+                        <i class="far fa-file-alt"></i>
+                        <h2 class="doctext doc2">My traditional curriculum vitae</h2>
+                    </a></div>
+                    <div class="container doc" id="doc1"><a href="{% static 'documents/presentationJacobS.pdf' %}" target="_blank">
+                        <i class="far fa-file-alt"></i>
+                        <h2 class="doctext doc1">Presentation of my programing skills and how i learned them (In Swedish)</h2>
+                    </a></div>
+                    <div class="container doc" id="doc3"><a href="{% static 'documents/KandidatexamenJacobSeidegård.pdf' %}" target="_blank">
+                        <i class="far fa-file-alt"></i>
+                        <h2 class="doctext doc3">Degree of Bachelor of Science</h2>
+                    </a></div>
+                    <div class="container doc" id="doc4"><a href="{% static 'documents/magisterexamenJacobSeidegård.pdf' %}" target="_blank">
+                        <i class="far fa-file-alt"></i>
+                        <h2 class="doctext doc3">Degree of Master of Science (60 credits)</h2>
+                    </a></div>
+                    <div class="container doc" id="doc5"><a href="{% static 'documents/masterexamenJacobSeidegård.pdf' %}" target="_blank">
+                        <i class="far fa-file-alt"></i>
+                        <h2 class="doctext doc3">Degree of Master of Science (120 credits)</h2>
+                    </a></div>
+                </div>
             </div>
         </div>
-
         <!-- After this line is the app icon buttons -->
         <h1 id="myname"></h1>
         <div id="appholder" class="container appholder">
-            <img class="icon" onclick="Hidealbum()" src="static/images/album-icon.png">
+            <img class="icon firsticon" onclick="Hidealbum()" src="static/images/album-icon.png">
             <img class="icon" src="static/images/LinkedIn_logo_initials.png">
             <img class="icon" src="static/images/GitHub-Mark.png">
-            <img class="icon" src="static/images/file-folder.png">
+            <img class="icon" onclick="Hidedocument()" src="static/images/file-folder.png">
             <img class="icon" onclick="Hideeducation()" src="static/images/education-icon.png">
             <img class="icon" onclick="Hideworkexp()" src="static/images/work-exp.png">
             <img class="icon" onclick="Hidetest()" src="static/images/skills-icon.jpg">
             <img class="icon" src="static/images/about-img.png">
         </div>
+        <!-- Om mejl skickat visas detta -->
+        {% if personname != None %}
+        <div class="ifmail" id="ifmail">
+            <h2>Thanks for contacting me {{ personname }}!<br> I'll be in contact as fast as i can.</h2>
+        </div>
+        {% endif %}
+        <!-- iconerna längst ner -->
         <div id="appholderbottom" class="container appholderbottom">
             <img class="iconbottom" onclick="Hidecontact()" src="static/images/mail-icon.png">
             <img class="iconbottom" onclick="window.open('https://www.linkedin.com/in/jacob-seidegård-b80412b7')" src="static/images/LinkedIn_logo_initials.png">
             <img class="iconbottom" onclick="window.open('https://github.com/Seide98')" src="static/images/GitHub-Mark.png">
         </div>
     </div>
-    <!-- Sidebaren -->
+    <!-- Infopannelen när man trycker på knappen -->
     <button class="openbtn fas fa-caret-right" id="openbtn" onclick="openNav()"></button>
     <div id="mySidebar" class="sidebar">
         <div id="sidecont" class="container sidebarcont">
@@ -325,8 +387,6 @@
         Feel free to click around on the icons and explore. You can reach me by clicking on the mail icon or trough my linkedIn. Hope this sparks your intrest.
         </div>
     </div>
-
-
 </div>
 
 </body>
@@ -342,38 +402,43 @@ function myFunction() {
     x.style.display = "block";
   }
 }
-
 function Hidealbum() {
     var hide = document.getElementById("appholder");
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("albumscreen");
+    var hide5 = document.getElementById("ifmail");
+
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
         hide4.style.display = "block";
+        hide5.style.display = "none";
 }
 function Hidetest() {
     var hide = document.getElementById("appholder");
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("test");
+    var hide5 = document.getElementById("ifmail");
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
         hide4.style.display = "block";
+        hide5.style.display = "none";
 }
 function Hidecontact() {
     var hide = document.getElementById("appholder");
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("contact");
+    var hide5 = document.getElementById("ifmail");
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
         hide4.style.display = "block";
+        hide5.style.display = "none";
 }
-
 function Hideeducation() {
     var hide = document.getElementById("appholder");
     var hide2 = document.getElementById("appholderbottom");
@@ -381,25 +446,38 @@ function Hideeducation() {
     var hide4 = document.getElementById("education");
     var hide5 = document.getElementById("unied");
     var hide6 = document.getElementById("othered");
+    var hide7 = document.getElementById("ifmail");
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
         hide4.style.display = "block";
         hide5.style.display = "flex";
         hide6.style.display = "flex";
+        hide7.style.display = "none";
 }
 function Hideworkexp() {
     var hide = document.getElementById("appholder");
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("workexp");
+    var hide5 = document.getElementById("ifmail");
 
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
         hide4.style.display = "block";
+        hide5.style.display = "none";
+}
+function Hidedocument() {
+    var hide = document.getElementById("appholder");
+    var hide2 = document.getElementById("appholderbottom");
+    var hide3 = document.getElementById("content");
+    var hide4 = document.getElementById("document");
 
-
+        hide.style.display = "none";
+        hide2.style.display = "none";
+        hide3.style.display = "block";
+        hide4.style.display = "block";
 }
 function Showalbum() {
     var hide = document.getElementById("appholder");
@@ -407,12 +485,15 @@ function Showalbum() {
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("albumscreen");
     var hide5 = document.getElementById("test");
-    var hide6 = document.getElementById("contact")
-    var hide7 = document.getElementById("education")
-    var hide8 = document.getElementById("workexp")
+    var hide6 = document.getElementById("contact");
+    var hide7 = document.getElementById("education");
+    var hide8 = document.getElementById("workexp");
+    var hide9 = document.getElementById("document");
+
         hide.style.display = "block";
         hide2.style.display = "block";
         hide3.style.display = "none";
+
         if (hide4.style.display == "block") {
             hide4.style.display = "none"; }
         if (hide5.style.display == "block") {
@@ -423,9 +504,9 @@ function Showalbum() {
             hide7.style.display = "none"; }
         if (hide8.style.display == "block") {
             hide8.style.display = "none"; }
+        if (hide9.style.display == "block") {
+            hide9.style.display = "none"; }
 }
-
-
 function kat1() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat1");
@@ -451,10 +532,7 @@ function kat1() {
     hide3.style.display = "none";
     hide4.style.display = "none";
     hide5.style.display = "none";
-
-
 }
-
 function kat2() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat2");
@@ -485,7 +563,6 @@ function kat2() {
     hide4.style.display = "none";
     hide5.style.display = "none";
 }
-
 function kat3() {
     var btnwidth = document.getElementsByClassName("skillkat");
     var btnwidth2 = document.getElementById("kat3");
@@ -575,8 +652,6 @@ function kat5() {
         hide3.style.display = "none";
         hide4.style.display = "none";
         hide5.style.display = "none";
-
-
 }
 function kat6() {
     var btnwidth = document.getElementsByClassName("skillkat");
@@ -625,11 +700,6 @@ function kat7() {
             }
         }
 }
-
-function clicklinkedin() {
-  location.href = "https://www.linkedin.com/in/jacob-seidegård-b80412b7";
-}
-
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
     var elem = document.getElementById("mySidebar");
@@ -645,6 +715,5 @@ function openNav() {
             elembtn.style["boxShadow"] = "0 0 4px #000000";
         }
 }
-
 </script>
 </html>

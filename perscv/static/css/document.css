@@ -1,0 +1,58 @@
+    .document {
+        display: none;
+        width: 100%;
+    }
+    .docgeneral {
+        position: relative;
+        margin-top: 25px;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .documenttext {
+        margin-top: 15px;
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    }
+    .doc {
+        margin-top: 30px;
+        position: relative;
+        left: 28%;
+        padding-left: 5%;
+        font-size: 12px;
+        border-radius: 25px;
+        height: 13%;
+        background-color: #EAEDED;
+        width: 40%;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        cursor: pointer;
+    }
+    .doc:hover {
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    }
+    .doc:active {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+    .fa-file-alt {
+        position: absolute;
+        font-size: 30px;
+        left: 12px;
+        top: 15px;
+    }
+    .doctext {
+        padding-top: 8px;
+        position: relative;
+        text-align: left;
+        color: black;
+    }
+    a {
+        text-decoration: none !important;
+    }
+    .doctext.doc2 {
+        padding-top: 20px;
+        margin-left: 30px;
+    }
+    .doctext.doc3 {
+        padding-top: 20px;
+        margin-left: 30px;
+    }

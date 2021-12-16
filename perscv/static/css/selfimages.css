@@ -1,4 +1,4 @@
-#albumscreen {
+    #albumscreen {
         padding-top: 30px;
         padding-left: 40px;
         padding-right: 0px;
@@ -11,6 +11,7 @@
         -moz-column-gap:4px;
         column-count:4;
         column-gap:4px;
+        overflow: hidden;
     }
     .albumimage {
        width: 180px;

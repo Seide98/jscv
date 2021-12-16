@@ -2,6 +2,7 @@ from django.shortcuts import render
 import datetime
 from django.utils import timezone
 from django.core.mail import send_mail
+from django.http import FileResponse
 from django.http import HttpResponse
 from django.urls import reverse
 
@@ -25,7 +26,11 @@ def index(request):
             email, # from email
             ['seidee98@gmail.com'], # to email
         )
-
         return render(request, 'index.html', {'personname': personname})
     else:
+
         return render(request, 'index.html', {})
+
+def presentation(request):
+
+    return render(request, 'index.html', {})

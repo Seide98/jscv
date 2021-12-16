@@ -29,6 +29,14 @@
         font-size: 50px;
         transition: 0.5s; /* 0.4 second transition effect to slide in the sidebar */
     }
+    @media (max-width: 1480px) {
+        .openbtn {
+            right: -25px;
+        }
+        .sidebar {
+
+        }
+    }
 /* Hide scrollbar for Chrome, Safari and Opera */
     .content::-webkit-scrollbar {
         display: none;
