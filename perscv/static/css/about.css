@@ -1,0 +1,9 @@
+.aboutme {
+    position: relative;
+    top: -300px;
+    display: none;
+}
+
+.abouttext {
+    font-size: 20px;
+}

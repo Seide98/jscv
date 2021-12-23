@@ -1,5 +1,4 @@
     #education {
-        height: 100%;
         width: 100%;
         padding-bottom: 10px;
         display: none;
@@ -12,20 +11,24 @@
     .education::-webkit-scrollbar {
         display: none;
     }
-    .unied {
-        width: 100%;
-        height: 50%;
-        display: none;
-        padding-left: 20px;
-        padding-right: 20px;
-
-        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-        justify-content: space-around;
-    }
-
-    .educat {
-        position: flex;
+    .column {
+         float:left;
+     }
+    .flip-card {
+        position: relative;
+        margin-bottom: 5px;
+        margin-left: 15px;
+        padding: 3px;
         width: 20%;
+        height: 50%;
+
+        perspective: 1000px;
+    }
+    .bach {
+        margin-left: 18%;
+    }
+    .flip-card-inner {
+        width: 100%;
         height: 100%;
         border: 1px solid;
         margin-right: 10px;
@@ -34,11 +37,95 @@
         background: url('../images/education/umeåuni.jpg') no-repeat center center;
         background-size: cover;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
-        transition: transform 0.2s;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner{
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .flip-card-front {
+        color: white;
+        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    }
+    .flip-card-back {
+        border-radius: 15px;
+
+        transform: rotateY(180deg);
+        font-weight: bold;
+        cursor: default;
+    }
+    .bachexamp {
+        text-align: left;
+        margin-left: -5px;
+        color: black;
+        margin-bottom: 5px;
+    }
+    .courseinc {
+        position: relative;
+        top: -10px;
+        font-weight: bold;
+        margin-bottom: -18px;
+        font-style: italic;
+        font-size: 22px;
+    }
+    .bessay {
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        border: 1px solid;
+        width: 70%;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    .bessay:hover {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    }
+    .mag {
+        background: linear-gradient(196deg, rgba(255,255,255,1) 0%, rgba(154,237,242,1) 99%)
+    }
+    .mas {
+        background: linear-gradient(196deg, rgba(255,255,255,1) 0%, rgba(255,99,99,1) 99%);
+    }
+    .hs {
+        background: linear-gradient(196deg, rgba(255,255,255,1) 0%, rgba(254,191,82,1) 99%);
+    }
+    .hsed {
+        margin-top: 20%;
+        font-size: 19px;
+        text-align: center;
+        margin-left: 5%;
+    }
+    .army {
+        background: linear-gradient(196deg, rgba(255,255,255,1) 0%, rgba(184,254,82,1) 99%);
+    }
+    .armyser {
+        font-size: 19px;
+        text-align: left;
+        margin-left: 5%;
+    }
+    .mast {
+        margin-bottom: 20px;
+    }
+    .bcard {
+        background: linear-gradient(196deg, rgba(255,255,255,1) 0%, rgba(99,136,255,1) 99%);
+    }
+    #degreeothertitle {
+        position: relative;
+        width: 100%;
+        float:left;
+    }
+    .otheredu {
+        margin-left: 26%;
     }
     .educat2 {
-        position: flex;
-        width: 20%;
+        width: 100%;
         height: 100%;
         border: 1px solid;
         margin-right: 10px;
@@ -47,11 +134,9 @@
         color: white;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         transition: transform 0.2s;
+
     }
-    .educat:hover {
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);
-        transform: scale(1.01);
-    }
+
     .educat2:hover {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);
         transform: scale(1.01);
@@ -67,14 +152,7 @@
         background-size: cover;
     }
     #gymn {
+
         background: url('../images/education/highvolt.png') black no-repeat center;
         background-size: contain;
-    }
-    .othered {
-        width: 100%;
-        height: 50%;
-        display: none;
-        padding-left: 20px;
-        padding-right: 20px;
-        justify-content: space-around;
     }
