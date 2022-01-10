@@ -28,15 +28,17 @@
 
     .appholder {
         padding-top: 30px;
-        width: 86.5%;
+        width: 87%;
         height: 50%;
         padding-left: 13%;
-
     }
     .appholderbottom {
         position: relative;
-        bottom: -100px;
-        width: 100%;
+        bottom: -50px;
+        width: 75%;
+        left: 0%;
+        padding-left: 25%;
+        height: 50%;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
     }
@@ -49,11 +51,13 @@
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
         margin-top: 0px;
         z-index: -10;
+
     }
 
     .icon:active {
         box-shadow:inset 1px 1px 10px 0px #000000;
     }
+
     .iconbottom {
         position: relative;
         background-color: white;
@@ -69,7 +73,6 @@
         box-shadow:inset 1px 1px 10px 0px #000000;
     }
     figure {
-
         position: relative;
         float: left;
         margin-right: -25px;
@@ -104,7 +107,7 @@
         margin-right: 5px;
     }
 
-    @media (max-width: 1600px) {
+    @media only screen and (max-width: 1550px) {
         #time {
           margin-right: 85%;
         }
@@ -115,21 +118,17 @@
             margin-left: 85%;
         }
         .appholder {
-            padding-left: 5%;
-            width: 95%;
+            padding-left: 3%;
+            width: 96%;
         }
         .appholderbottom {
-            width: 100%;
-            bottom: -28%;
+            padding-left: 18%;
+            width: 80%;
+            left: 0%;
         }
     }
-    @media (max-width: 1450px) {
-        .appholder {
-            padding-left: 5%;
-            width: 90%;
-        }
-    }
-    @media (max-width: 1300px) {
+
+    @media only screen and (max-width: 1300px) {
         #time {
           margin-right: 85%;
         }
@@ -140,19 +139,20 @@
             margin-left: 78%;
         }
         .appholderbottom {
-            width: 100%;
-            bottom: -28%;
+            width: 80%;
+            left: 0%;
+
         }
         .appholder {
-            width: 95%;
+            padding-left: 0%;
+            width: 97%;
         }
         .iconbottom {
             margin-right: 10px;
             margin-left: 10px;
         }
     }
-
-    @media screen and (max-width: 750px) {
+    @media only screen and (max-width: 1050px) {
         #time {
           margin-right: 70%;
         }
@@ -163,8 +163,16 @@
             margin-left: 70%;
         }
         .appholderbottom {
-            width: 100%;
-            bottom: -27%;
+            width: 80%;
+            bottom: -15%;
+            left: 0%;
+            padding-left: 17%;
+        }
+        .appholder {
+
+            padding-left: 5%;
+
+            width: 90%;
         }
         .iconbottom {
             margin-right: 10px;
@@ -178,19 +186,52 @@
         figure {
             margin-top: 0px;
         }
-    }
-    @media screen and (max-width: 640px) {
 
+    }
+
+    @media only screen and (max-width: 768px) {
+        #time {
+          margin-right: 70%;
+        }
+        #wifi {
+          margin-left: 30%
+        }
+        #battery {
+            margin-left: 70%;
+        }
         .appholderbottom {
-            width: 120%;
-            bottom: -27%;
+            width: 95%;
+            bottom: -10%;
+            left: 0%;
+            padding-left: 5%;
+        }
+        .appholder {
+
+            padding-left: 1%;
+            width: 90%;
         }
         .iconbottom {
             margin-right: 10px;
-            margin-left: 5px;
+            margin-left: 10px;
+        }
+        .ifmail {
+            top: 325px;
+            font-size: 14px;
         }
         figure {
-            margin-top: -10px;
+            margin-top: 0px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+    .appholderbottom {
+        width: 100%;
+    }
+    .iconbottom {
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+    figure {
+        margin-top: -10px;
         }
     }
     .content {
