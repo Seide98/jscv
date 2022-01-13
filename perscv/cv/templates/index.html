@@ -50,9 +50,18 @@ function startTime()
             <i id="wifi" class="fas fa-wifi"></i>
             <i id="battery" class="fas fa-battery-three-quarters"> 76%</i>
         </div>
+        <div class="oprojframe" id="oprojframe">
+            <div class="inneropframe">
+                <figure>
+                    <img class="icon" id="cecicon" onclick="window.open('http://www.cecjs.com/')" src="static/images/loga.ico">
+                    <figcaption id="cecfigcap">CEC</figcaption>
+                </figure>
+            </div>
+        </div>
         <div id="content" class="container content">
             <a id="close" onclick="Showalbum()" class="fas fa-times fa-2x" ></a>
             <!-- content for the contentscreen allways goes under this line -->
+
             <!-- Färdigheter -->
             <div id="test" class="container skillsscreen">
                 <div id="leftcontainer" class="container left">
@@ -70,7 +79,7 @@ function startTime()
                         <p class="peronalcont"><i class="fas fa-user-check"></i> Eager to learn</p><br>
                         <p class="peronalcont"><i class="fas fa-user-check"></i> Open-minded and Curious</p><br>
                         <p class="peronalcont"><i class="fas fa-user-check"></i> Accurate in my tasks</p><br>
-                        <p class="peronalcont"><i class="fas fa-user-check"></i> Fear no challange</p><br>
+                        <p class="peronalcont"><i class="fas fa-user-check"></i> Fear no challenge</p><br>
                         </ul>
                         <ul class="perscont2">
                         <p class="peronalcont"><i class="fas fa-user-check"></i> Stress resistant</p><br>
@@ -101,7 +110,7 @@ function startTime()
                         <div class="goodskill">Good</div>
                         <div class="containerit recman">
                             <div class="skillit recman">
-                                <p class="itcomptext">80%</p>
+                                <p class="itcomptext">70%</p>
                             </div>
                         </div>
                         <p class="compitheadtext">Sharepoint</p>
@@ -197,14 +206,14 @@ function startTime()
                 <img class="albumimage" src="static/images/picture1.jpg">
                 <img class="albumimage" src="static/images/picture6.png">
                 <img class="albumimage" src="static/images/picture4.jpg">
-                <img class="albumimage" src="static/images/wooden-table-background.jpg">
+
             </div>
             <!-- Kontakta mig -->
             <form action="{% url 'index' %}" method="post">
                 {% csrf_token %}
                 <div id="contact" class="container contactme">
                     <div id="contactform" class="container form">
-                        <h2>Contact Me</h2>
+                        <h2 id="contactme">Contact Me</h2>
                         <label for="lname">Your Name</label>
                         <input type="text" id="lname" name="personname" placeholder="Your name..">
                         <label for="email">Email Adress</label>
@@ -414,11 +423,34 @@ function startTime()
         </div>
 
         <div id="aboutme" class="container aboutme">
-            <div>
-                <h4 class="abouttext">This page is coming soon. In the meantime you can read more about me in the documents section.
-                <br><br><br><br>
-                    Best Regards<br>
-                    Jacob Seidegård
+            <div class="btnslang">
+                <img id="svebtn" onclick="transsve()" src="static/images/SE.png">
+                <img id="engbtn" onclick="transeng()" src="static/images/GB.png">
+            </div>
+            <div class="aboutframe swe" id="aboutframe">
+                <h4 class="abouttext" id="abouttext">
+                    Jag ser fram emot att få bidra med mina kunskaper och att utvecklas som både person och för
+                    organisationens vägnar. Jag som individ tar tillvaron med ro och bidrar till en god stämning runt omkring
+                    mig, samtidigt är jag stresstålig och har ett analytiskt synsätt med en snabb inlärningsförmåga och är
+                    serviceinriktad. Jag har även ett stort intresse för teknik, IT och detta har bidragit till att jag utöver mina
+                    akademiska kunskaper även har börjat att lära mig att programmera i Python. Och detta har jag gjort sedan i slutet av våren 2020.
+                <br>
+                 <h4 id="brjs">Hälsningar</h4>
+                 <h4 id="bestrgname">Jacob Seidegård</h4>
+                </h4>
+            </div>
+             <div class="eng" id="aboutframeeng">
+                <h4 class="abouttext" id="abouttexteng">
+                    I am looking forward to be able to share my experiences and my knowledge in a thriving enviorment were
+                    i can develop both as a person and for the behalf of the organisation. As an individual, i take life
+                    in stride and i allways try to contribute to a good and fun atmosphere around me. I'm stress-resistant
+                    and have an analytical approach were i try to learn at every oppertunity given. I'm a fast learner with
+                    a strong service-minded mindset. I also have a great interest in technology and IT wich has contributed
+                    me, in addition to my academic knowledge, to also start to learn programing in Python. I've been doing
+                    this since the end of spring 2020.
+                <br>
+                 <h4 id="brjseng">Best Regards</h4>
+                 <h4 id="bestrgnameeng">Jacob Seidegård</h4>
                 </h4>
             </div>
         </div>
@@ -430,8 +462,8 @@ function startTime()
                 <figcaption>Pictures</figcaption>
             </figure>
             <figure>
-                <img class="icon" onclick="window.open('http://www.cecjs.com/')" src="static/images/loga.ico">
-                <figcaption>CEC</figcaption>
+                <img class="icon" onclick="submap()" src="static/images/project-management.png">
+                <figcaption>Other Projects</figcaption>
             </figure>
             <figure>
                 <img class="icon" onclick="Hidedocument()" src="static/images/file-folder.png">
@@ -501,7 +533,20 @@ function startTime()
 
 </body>
 <script>
+function transeng() {
+    var engtrans = document.getElementById("aboutframeeng");
+    var svetrans = document.getElementById("aboutframe");
+        engtrans.style.display = "block";
+        svetrans.style.display = "none";
+}
 
+function transsve() {
+    var engtrans = document.getElementById("aboutframeeng");
+    var svetrans = document.getElementById("aboutframe");
+
+        engtrans.style.display = "none";
+        svetrans.style.display = "block";
+}
 function myFunction() {
   var x = document.getElementById("menucontainer");
   if (x.style.display == "block") {
@@ -510,18 +555,50 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+function submap() {
+    var submap = document.getElementById("oprojframe");
+    var cecicon = document.getElementById("cecicon");
+    var cectext = document.getElementById("cecfigcap");
+
+        if (submap.style.height == "9%") {
+            submap.style.height = "0%";
+            submap.style.width = "0%";
+            cecicon.style.height = "0%";
+            cecicon.style.display = "none";
+            cectext.style.display = "none";
+        }
+        else {
+
+            submap.style.height = "9%";
+            submap.style.width = "10%";
+            cecicon.style.height = "62%";
+            cectext.style.height = "62%";
+            setTimeout (() => (cecicon.style.display = "block"), 60);
+            setTimeout (() => (cectext.style.display = "block"), 100);
+        }
+}
+
+
+
 function Hidealbum() {
     var hide = document.getElementById("appholder");
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("albumscreen");
     var hide5 = document.getElementById("ifmail");
+    var cecicon = document.getElementById("oprojframe");
+    var cectext = document.getElementById("cecfigcap");
 
+        cecicon.style.display = "none";
+        cectext.style.display = "none";
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
         hide4.style.display = "block";
         hide5.style.display = "none";
+
+
+
 }
 function Hidetest() {
     var hide = document.getElementById("appholder");
@@ -529,6 +606,11 @@ function Hidetest() {
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("test");
     var hide5 = document.getElementById("ifmail");
+    var cecicon = document.getElementById("oprojframe");
+    var cectext = document.getElementById("cecfigcap");
+
+        cecicon.style.display = "none";
+        cectext.style.display = "none";
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
@@ -541,6 +623,11 @@ function Hidecontact() {
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("contact");
     var hide5 = document.getElementById("ifmail");
+    var cecicon = document.getElementById("oprojframe");
+    var cectext = document.getElementById("cecfigcap");
+
+        cecicon.style.display = "none";
+        cectext.style.display = "none";
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
@@ -555,6 +642,11 @@ function Hideeducation() {
     var hide5 = document.getElementById("unied");
     var hide6 = document.getElementById("othered");
     var hide7 = document.getElementById("ifmail");
+    var cecicon = document.getElementById("oprojframe");
+    var cectext = document.getElementById("cecfigcap");
+
+        cecicon.style.display = "none";
+        cectext.style.display = "none";
         hide.style.display = "none";
         hide2.style.display = "none";
         hide3.style.display = "block";
@@ -569,6 +661,11 @@ function Hideworkexp() {
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("workexp");
     var hide5 = document.getElementById("ifmail");
+    var cecicon = document.getElementById("oprojframe");
+    var cectext = document.getElementById("cecfigcap");
+
+        cecicon.style.display = "none";
+        cectext.style.display = "none";
 
         hide.style.display = "none";
         hide2.style.display = "none";
@@ -581,6 +678,11 @@ function Hidedocument() {
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("document");
+    var cecicon = document.getElementById("oprojframe");
+    var cectext = document.getElementById("cecfigcap");
+
+        cecicon.style.display = "none";
+        cectext.style.display = "none";
 
         hide.style.display = "none";
         hide2.style.display = "none";
@@ -593,6 +695,11 @@ function Hideabout() {
     var hide2 = document.getElementById("appholderbottom");
     var hide3 = document.getElementById("content");
     var hide4 = document.getElementById("aboutme");
+    var cecicon = document.getElementById("oprojframe");
+    var cectext = document.getElementById("cecfigcap");
+
+        cecicon.style.display = "none";
+        cectext.style.display = "none";
 
         hide.style.display = "none";
         hide2.style.display = "none";
@@ -609,7 +716,9 @@ function Showalbum() {
     var hide7 = document.getElementById("education");
     var hide8 = document.getElementById("workexp");
     var hide9 = document.getElementById("document");
-    var hide10 = document.getElementById("aboutme")
+    var hide10 = document.getElementById("aboutme");
+    var hide11 = document.getElementById("oprojframe");
+
 
         hide.style.display = "block";
         hide2.style.display = "block";
@@ -629,6 +738,10 @@ function Showalbum() {
             hide9.style.display = "none"; }
         if (hide10.style.display == "block") {
             hide10.style.display = "none";}
+        hide11.style.display = "block";
+        hide11.style.height = "0%";
+        hide11.style.width = "0%";
+
 }
 function kat1() {
     var btnwidth = document.getElementsByClassName("skillkat");
@@ -825,8 +938,11 @@ function kat7() {
 }
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
+    var cont = document.getElementById("sidecont");
     var elem = document.getElementById("mySidebar");
         elem.setAttribute('style', (elem.clientWidth == 200) ? 'width: 0' : 'width: 200px');
+        cont.setAttribute('style', (cont.clientWidth == 100) ? 'width: 0' : 'width: 180px');
+
     var elembtn = document.getElementById("openbtn");
         if (elembtn.style.right == "-215px") {
             elembtn.style.right = "0px";

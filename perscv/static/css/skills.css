@@ -111,14 +111,14 @@
         border-radius: 5px;
         width: 75%;
         height: 25px;
-        background-color: #2196F3;
+        background-color: orange;
     }
     .containerit .recman {
         position: relative;
         border-radius: 5px;
-        width: 80%;
+        width: 70%;
         height: 25px;
-        background-color: green;
+        background-color: orange;
     }
 
     .containerit .sharepoint {

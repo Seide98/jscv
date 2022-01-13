@@ -25,7 +25,11 @@
     body {
         background: url('../images/wooden-table-background-edit-coff.png') no-repeat center center fixed
     }
-
+    #sidecont {
+        position: absolute;
+        width: 0px;
+        transition: 300ms ease-out;
+    }
     .appholder {
         padding-top: 30px;
         width: 87%;
@@ -51,6 +55,7 @@
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
         margin-top: 0px;
         z-index: -10;
+        cursor: pointer;
 
     }
 
@@ -67,6 +72,7 @@
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
         margin-right: 30px;
         margin-left: 30px;
+        cursor: pointer;
     }
 
     .iconbottom:active {
@@ -85,6 +91,7 @@
         font-size: 13px;
         margin-top: 8px;
         font-family: Arial, Helvetica, sans-serif;
+        cursor: default;
     }
     #top {
         position: fixed;
@@ -92,6 +99,35 @@
         margin-top: 5px;
         z-index: 200;
     }
+    #oprojframe {
+        position: absolute;
+        top: 27%;
+        left: 39%;
+        background: white;
+        border-radius: 15px;
+        width: 0%;
+        height: 0%;
+        box-shadow:inset 0px 0px 4px 1px rgba(0, 0, 0, 0.8);
+        transition: 200ms ease-out;
+    }
+
+    #cecicon {
+        position: relative;
+        z-index: 20;
+        margin-left: -20px;
+        margin-top: -10px;
+        display: none;
+        height: 0%;
+        transition: 200ms ease-out;
+    }
+
+    #cecfigcap {
+        margin-left: -20px;
+        display: none;
+        height: 0%;
+        transition: 200ms ease-out;
+    }
+
     #time {
         margin-right: 88%;
         font-size: 18px;
@@ -105,6 +141,12 @@
        margin-top: -20px;
         margin-left: 79%;
         margin-right: 5px;
+    }
+    .ifmail {
+        position: absolute;
+        left:   30%;
+        width: 40%;
+        top: 35%;
     }
 
     @media only screen and (max-width: 1550px) {
@@ -141,6 +183,9 @@
         .appholderbottom {
             width: 80%;
             left: 0%;
+        }
+        #oprojframe {
+            top: 35%;
 
         }
         .appholder {
@@ -161,6 +206,10 @@
         }
         #battery {
             margin-left: 70%;
+        }
+        #oprojframe {
+            top: 32%;
+            padding-top: 20px;
         }
         .appholderbottom {
             width: 80%;
@@ -195,6 +244,9 @@
         }
         #wifi {
           margin-left: 30%
+        }
+        .ifmail {
+            display: none;
         }
         #battery {
             margin-left: 70%;
@@ -243,8 +295,4 @@
         overflow-y: scroll;
     }
 
-    .ifmail {
-        position: absolute;
-        left:   30%;
-        width: 40%;
-    }
+

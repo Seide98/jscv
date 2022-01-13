@@ -1,9 +1,61 @@
 .aboutme {
     position: relative;
-    top: -300px;
+    top: -420px;
+    display: none;
+    padding-left: 18%;
+}
+.abouttext {
+    text-align: justify;
+    font-size: 26px;
+    font-style: italic;
+    font-family: Garamond, serif;
+    text-shadow: 1px 1px 3px gray;
+}
+#brjs {
+    font-size: 25px;
+    text-shadow: 1px 1px 3px gray;
+}
+#bestrgname {
+    margin-top: -30px;
+    font-size: 25px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px gray;
+}
+#brjseng {
+    margin-top: -10px;
+    font-size: 25px;
+    text-shadow: 1px 1px 3px gray;
+}
+#bestrgnameeng {
+    margin-top: -30px;
+    font-size: 25px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px gray;
+}
+.btnslang {
+    position: absolute;
+    left: 40%;
+    top: -14%;
+    width: 20%;
+    height: 10%;
+}
+.eng {
+    width: 80%;
     display: none;
 }
+.swe{
+    width: 80%;
+}
+#engbtn {
+    position: relative;
+    width: auto;
+    height: 40px;
+    cursor: pointer;
+}
 
-.abouttext {
-    font-size: 20px;
+#svebtn {
+    position: relative;
+    width: auto;
+    height: 40px;
+    cursor: pointer;
 }

@@ -11,8 +11,12 @@
       height: 280%;
       padding-top: 35px;
 
-    }
 
+    }
+    .worktitle {
+        color: white;
+        text-shadow: 1px 1px 3px black;
+    }
     /* The actual timeline (the vertical ruler) */
     .timeline::after {
       content: '';
